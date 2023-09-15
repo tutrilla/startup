@@ -1,2 +1,1 @@
-This is a conflict
-but it is a good conflict, in fact healthy
+# This is a not conflict
