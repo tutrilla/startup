@@ -19,11 +19,11 @@ It is going to have a login page as well as a dashboard initially. The login pag
 
 Login page:
 
-![Recruitlang's login page]([startup/'login page of recruitlang'](https://github.com/tutrilla/startup/blob/main/Login%20page%20of%20recruitlang.png))
+![Recruitlang's login page](startup/'login page of recruitlang.png')
 
 After signing in, you will be taken to the dashboard:
 
-![Recruitlang's dashboard page]([startup/'Dashboard of Recruitlang'](https://github.com/tutrilla/startup/blob/main/Dashboard%20of%20Recruitlang.jpg)https://github.com/tutrilla/startup/blob/main/Dashboard%20of%20Recruitlang.jpg)
+![Recruitlang's dashboard page](startup/'Dashboard of Recruitlang.jpg')
 
 
 
