@@ -19,10 +19,10 @@ It is going to have a login page as well as a dashboard initially. The login pag
 
 Login page:
 
-![Recruitlang's login page](startup/login%20page%20of%20recruitlang.png)
+![Recruitlang's login page](startup/blob/main/Login%20page%20of%20recruitlang.png)
 
 After signing in, you will be taken to the dashboard:
 
-![Recruitlang's dashboard page](startup/Dashboard%20of%20Recruitlang.jpg)
+![Recruitlang's dashboard page](startup/blob/main/Dashboard%20of%20Recruitlang.jpg)
 
 
