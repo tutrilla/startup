@@ -32,4 +32,12 @@ After signing in, you will be taken to the dashboard:
 
 ![Recruitlang's dashboard page](Dashboard%20of%20Recruitlang.jpg)
 
+## Use of technology
+
+HTML - HTML will be used in order to create the layout
+CSS - CSS will be used in order to make the website design be more user friendly
+Javascript - Javascript will be used to ensure that the website function accordingly
+Node - Node will ensure that the server side of the website runs smoothly and efficiently
+Database - A database will be used to store information for the website and make it so when another instance of the website is launched that the information is still there.
+
 
