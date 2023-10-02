@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recruitlang</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href = "styles.css" />
+
+    <style>
+        main {text-align: center;}
+    </style>
+
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+        <div style = "text-align: center;">
+            <h1>Recruitlang<sup>&reg;</sup></h1>
+        </div>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+            <li><a href="index.html">Home</a></li>
+            <li><a href = "dashboard.html">Dashboard</a></li>
+            <li><a href = "requests.html">Requests</a></li>
+            <li><a href = "applicants.html">Applicants</a></li>
+            <li><a href = "resources.html">Resources</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+        <br>
+
+        <div style = "text-align: center;">
+            <h1>
+                <strong>Login</strong>
+            </h1>
+        </div>
+        <br>
+
+      <form>
+        <label for="Username">Username</label>
+        <input type="text" id="name" placeholder="Username" />
+      </form>
+
+      <br>
+
+      <form method="get" action="dashboard.html">
+        <label for="Passowrd">Password</label>
+        <input type="text" id="lookup" placeholder="Password" />
+        <br>
+        <br>
+        <button type="submit">Login</button>
+      </form>
+
+    </main>
+
+    
+  </body>
+</html>

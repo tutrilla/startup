@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recruitlang</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href = "styles.css" />
+
+    <style>
+        main {text-align: center;}
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+        <div style = "text-align: center;">
+            <h1>Recruitlang<sup>&reg;</sup></h1>
+        </div>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href = "dashboard.html">Dashboard</a></li>
+          <li><a href = "requests.html">Requests</a></li>
+          <li><a href = "applicants.html">Applicants</a></li>
+          <li><a href = "resources.html">Resources</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+        <!-- This is the request board -->
+        <br>
+        <table>
+            <tr>
+                <th>Requests</th>
+            </tr>
+            <tr>
+                <td>New Requests</td>
+            </tr>
+            <tr>
+                <td>Total Active Requests</td>
+            </tr>
+        </table>
+        <br>
+        
+        <!-- This is the applicant dashboard -->
+        <br>
+        <table>
+            <tr>
+                <th>Applicants</th>
+            </tr>
+            <tr>
+                <td>New Applicants</td>
+            </tr>
+            <tr>
+                <td>Total Pending Applicants</td>
+            </tr>
+        </table>
+        <br>
+
+    </main>
+
+</html>

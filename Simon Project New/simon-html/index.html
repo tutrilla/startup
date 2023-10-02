@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon HTML</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href = "styles.css" />
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1>Simon in class<sup>&reg;</sup></h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="play.html">Play</a></li>
+          <li><a href="scores.html">Scores</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <h1><p style = "color:red">Welcome</p></h1>
+      <p>Login to play</p>
+      <p id="para1">This is the id tag</p>
+      <p class="class1">This is the class tag</p>
+      <p style = "color:aqua">This is another P tag</p>
+      <form method="get" action="play.html">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name here" />
+        <button type="submit">Login</button>
+      </form>
+
+      <form method="get" action="scores.html">
+        <label for="Lookup for scores">Lookup</label>
+        <input type="text" id="lookup" placeholder="Type name to lookup" />
+        <button type="submit">Find</button>
+      </form>
+
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Author Name(s)</span>
+      <br />
+      <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
+    </footer>
+  </body>
+</html>
