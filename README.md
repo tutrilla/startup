@@ -45,3 +45,19 @@ Node - Node will ensure that the server side of the website runs smoothly and ef
 Database - A database will be used to store information for the website and make it so when another instance of the website is launched that the information is still there.
 
 Websocket - You can see realtime changes to data on the dashboard.
+
+## CSS Deliverable
+
+For this deliverable, I styled the application
+
+- Header, footer, and main content body
+
+- Navigation elements: I built a navigation bar that is response
+
+- Application elements: Use good and simple coloring
+
+- Responsive to window resizing: My app resizing works
+
+- Application text content: Font is consistent throughout application
+
+- Application images: The logo is still there from the html deliverable
