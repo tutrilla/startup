@@ -5,8 +5,8 @@ function createRequest() {
     createRequestBtn.addEventListener("click", function (e) {
         e.preventDefault();
 
-      requestForm.style.display = "block";
-      createRequestBtn.style.display = "none";
+        requestForm.style.display = "block";
+        createRequestBtn.style.display = "none";
     });
     
     /*
