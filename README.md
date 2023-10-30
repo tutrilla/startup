@@ -61,3 +61,13 @@ For this deliverable, I styled the application
 - Application text content: Font is consistent throughout application
 
 - Application images: The logo is still there from the html deliverable
+
+## Javascript Deliverable
+
+For this devlierable, I added the javascript to the application
+
+- Javascript support for future login: Added javascript to login
+
+- Javascript support for future database data: Attempted to add that to the request page, but ran into issues where submitting the request wasn't working. Will troubleshoot this week to get that fixed
+
+- Javascript support for future WebSocket: Amount of requests will be displayed on dashboard
