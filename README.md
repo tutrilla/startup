@@ -113,7 +113,7 @@ For this devlierable, I added the javascript to the application
 - addEventListener listens for a specified event on an HTML element. Events can be user interactions (e.g., clicks, mouseover, keypress), browser-related events (e.g., page load, resize), and more.
 
 10. What does the following line of Javascript do using a # selector?
-- # = ID selector
+- \# = ID selector
 
 11. Which of the following are true? (mark all that are true about the DOM)
 - DOM represents a web document's structure in a heirarchical way.
@@ -121,24 +121,24 @@ For this devlierable, I added the javascript to the application
 
 12. By default, the HTML span element has a default CSS display property value of:
 - The default CSS display property value for an HTML <span> element is inline.
-- 
+
 13. How would you use CSS to change all the div elements to have a background color of red?
 - div {
-    background-color: red;
-}
+-    background-color: red;
+- }
 
 14. How would you display an image with a hyperlink in HTML?
-- <a href="https://example.com">
-    <img src="image.jpg" alt="Description of the image">
-</a>
+- ```<a href="https://example.com">```
+-    ```<img src="image.jpg" alt="Description of the image">```
+- ```</a>```
 
 15. In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
 - Content, Padding, Border, Margin
 
 16. Given the following HTML, what CSS would you use to set the text "troubl" to green and leave the "double" text unaffected?
-- ```#myText {
-    color: green;
-}```
+- #myText {
+-    color: green;
+- }
 17. What will the following code output when executed using a for loop and console.log?
 
 18. How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
@@ -146,65 +146,65 @@ For this devlierable, I added the javascript to the application
 - element.style.color = 'green';
 
 19. What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
-- In this order: <p>, <ol>, <ul>, <h2>, <h1>, <h3>
+- In this order: ```<p>, <ol>, <ul>, <h2>, <h1>, <h3>```
 
 20. How do you declare the document type to be html?
-- ```<!DOCTYPE html>```
+- <!DOCTYPE html>
 21. What is valid javascript syntax for if, else, for, while, switch statements?
-```
-if (condition) {
-    // Code to execute if the condition is true
-}
 
-if (condition) {
-    // Code to execute if the condition is true
-} else {
-    // Code to execute if the condition is false
-}
+- if (condition) {
+-     // Code to execute if the condition is true
+- }
 
-for (initialization; condition; iteration) {
-    // Code to execute in each iteration
-}
+- if (condition) {
+-    // Code to execute if the condition is true
+- } else {
+-    // Code to execute if the condition is false
+- }
 
-while (condition) {
-    // Code to execute as long as the condition is true
-}
+- for (initialization; condition; iteration) {
+-    // Code to execute in each iteration
+- }
 
-switch (expression) {
-    case value1:
-        // Code to execute if expression matches value1
-        break;
-    case value2:
-        // Code to execute if expression matches value2
-        break;
-    default:
-        // Code to execute if expression doesn't match any case
-}```
+- while (condition) {
+-    // Code to execute as long as the condition is true
+- }
+
+- switch (expression) {
+-    case value1:
+-        // Code to execute if expression matches value1
+-        break;
+-    case value2:
+-        // Code to execute if expression matches value2
+-        break;
+-    default:
+-        // Code to execute if expression doesn't match any case
+- }
 
 22. What is the correct syntax for creating a javascript object?
-```
-let person = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 30,
-    email: "john@example.com"
-};```
+
+- let person = {
+-    firstName: "John",
+-   lastName: "Doe",
+-    age: 30,
+-    email: "john@example.com"
+- };
 
 23. Is it possible to add new properties to javascript objects?
 - Yes
-```var myObject = {};
-myObject.newProperty = 'New Value';
+- var myObject = {};
+- myObject.newProperty = 'New Value';
 
-var person = {
-    firstName: "John",
-    lastName: "Doe"
-};
+- var person = {
+-    firstName: "John",
+-    lastName: "Doe"
+- };
 
-// Adding a new property
-person.age = 30;```
+- // Adding a new property
+- person.age = 30;
 
 24. If you want to include JavaScript on an HTML page, which tag do you use?
-- <script src="myscript.js"></script>
+- ```<script src="myscript.js"></script>```
 
 25. Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
 26. Which of the following correctly describes JSON?
