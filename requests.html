@@ -64,7 +64,57 @@
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
+    
+    <!-- Requests -->
+    <main>
+      <!-- Create a Request Button -->
+      <div class="container">
+        <div class="row">
+            <div class="col-12 text-right"> <!-- Use text-right to right-align the button -->
+                <button id="createRequestBtn" onclick="createRequest()" class="btn btn-primary">Create Request</button>
+            </div>
+        </div>
+    </div>
+    
 
-
+      <!-- The form that appears to create a request -->
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <form id="requestForm" style="display: none;">
+              <div class="mb-3">
+                <label for="requesterName" class="form-label">Request made by:</label>
+                <input type="text" class="form-control" id="requesterName" required>
+              </div>
+              <div class="mb-3">
+                <label for="vendorType" class="form-label">Type of Vendor:</label>
+                <input type="text" class="form-control" id="vendorType" required>
+              </div>
+              <div class="mb-3">
+                <label for="languageCombo" class="form-label">Language Combination:</label>
+                <input type="text" class="form-control" id="languageCombo" required>
+              </div>
+              <div class="mb-3">
+                <label for="urgency" class="form-label">Urgency of request:</label>
+                <select class="form-select" id="urgency" required>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                  <option value="High">Urgent</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="dueDate" class="form-label">Due date:</label>
+                <input type="date" class="form-control" id="dueDate" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+      <script src="create-request.js"></script>
+    </main>
     </body>
 </html>
