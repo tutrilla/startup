@@ -136,9 +136,9 @@ For this devlierable, I added the javascript to the application
 - Content, Padding, Border, Margin
 
 16. Given the following HTML, what CSS would you use to set the text "troubl" to green and leave the "double" text unaffected?
-- #myText {
+- ```#myText {
     color: green;
-}
+}```
 17. What will the following code output when executed using a for loop and console.log?
 
 18. How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
@@ -149,9 +149,9 @@ For this devlierable, I added the javascript to the application
 - In this order: <p>, <ol>, <ul>, <h2>, <h1>, <h3>
 
 20. How do you declare the document type to be html?
-- <!DOCTYPE html>
+- ```<!DOCTYPE html>```
 21. What is valid javascript syntax for if, else, for, while, switch statements?
-
+```
 if (condition) {
     // Code to execute if the condition is true
 }
@@ -179,19 +179,20 @@ switch (expression) {
         break;
     default:
         // Code to execute if expression doesn't match any case
-}
+}```
 
 22. What is the correct syntax for creating a javascript object?
+```
 let person = {
     firstName: "John",
     lastName: "Doe",
     age: 30,
     email: "john@example.com"
-};
+};```
 
 23. Is it possible to add new properties to javascript objects?
 - Yes
-var myObject = {};
+```var myObject = {};
 myObject.newProperty = 'New Value';
 
 var person = {
@@ -200,7 +201,7 @@ var person = {
 };
 
 // Adding a new property
-person.age = 30;
+person.age = 30;```
 
 24. If you want to include JavaScript on an HTML page, which tag do you use?
 - <script src="myscript.js"></script>
@@ -210,20 +211,20 @@ person.age = 30;
 - data structure that stores data in a format that is both human-readable and machine-readable
 
 27. What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo do?
-chmod: Change file/directory permissions.
-pwd: Display the current working directory.
-cd: Change the current directory.
-ls: List files and directories.
-vim: Text editor for the console.
-nano: Simple text editor for the console.
-mkdir: Create a new directory.
-mv: Move or rename files/directories.
-rm: Remove/delete files or directories.
-man: Access command manuals.
-ssh: Securely connect to remote servers.
-ps: Display running processes.
-wget: Download files from the web.
-sudo: Execute commands with elevated privileges.
+- chmod: Change file/directory permissions.
+- pwd: Display the current working directory.
+- cd: Change the current directory.
+- ls: List files and directories.
+- vim: Text editor for the console.
+- nano: Simple text editor for the console.
+- mkdir: Create a new directory.
+- mv: Move or rename files/directories.
+- rm: Remove/delete files or directories.
+- man: Access command manuals.
+- ssh: Securely connect to remote servers.
+- ps: Display running processes.
+- wget: Download files from the web.
+- sudo: Execute commands with elevated privileges.
 
 28. Which of the following console command creates a remote shell session?
 - ssh username@domain.com
