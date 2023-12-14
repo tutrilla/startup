@@ -1,29 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
     updateRequestTable();
-
-    // Function to update the request table
-    function updateRequestTable() {
-        // Retrieve requests from localStorage
-        let requests = JSON.parse(localStorage.getItem("requests")) || [];
-
-        // Calculate the number of new requests and total active requests
-        let newRequestsCount = 0;
-        let totalActiveRequestsCount = requests.length;
-
-        
-        for (const request of requests) {
-            // Requests more than one day old are considered to be new
-            const requestDate = new Date(request.dueDate); 
-            const oneDayAgo = new Date();
-            oneDayAgo.setDate(oneDayAgo.getDate() - 1);
-
-            if (requestDate > oneDayAgo) {
-                newRequestsCount++;
-            }
-        }
-
-        // Update the table cells with the calculated counts
-        document.getElementById("newRequestsCount").textContent = newRequestsCount.toString();
-        document.getElementById("totalActiveRequestsCount").textContent = totalActiveRequestsCount.toString();
+  
+    async function updateRequestTable() {
+      try {
+        // Fetch requests from the server
+        const response = await fetch('/api/requests');
+        const requests = await response.json();
+  
+        // Update the table cells with the retrieved counts
+        document.getElementById("newRequestsCount").textContent = getNewRequestsCount(requests).toString();
+        document.getElementById("totalActiveRequestsCount").textContent = requests.length.toString();
+      } catch (error) {
+        console.error('Error updating request table:', error);
+      }
     }
-});
+  
+    function getNewRequestsCount(requests) {
+      const oneDayAgo = new Date();
+      oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+  
+      return requests.filter(request => new Date(request.dueDate) > oneDayAgo).length;
+    }
+  });
+  

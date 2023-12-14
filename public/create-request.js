@@ -17,7 +17,7 @@ function createRequest() {
 
     // Check if the event listener is already attached
     if (!requestForm.hasEventListener) {
-        requestForm.addEventListener("submit", function (e) {
+        requestForm.addEventListener("submit", async function (e) {
             e.preventDefault(); // Prevent form from refreshing
 
             const request = {
@@ -28,17 +28,26 @@ function createRequest() {
                 dueDate: document.getElementById("dueDate").value
             };
 
-            // Check if there are requests in localStorage
-            let requests = JSON.parse(localStorage.getItem("requests")) || [];
+            // Send the new request data to the server
+            try {
+                const response = await fetch('/api/requests', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(request),
+                });
 
-            // Add the new request to the array
-            requests.push(request);
-
-            // Serialize the updated requests array to JSON
-            const requestsJSON = JSON.stringify(requests);
-
-            // Store the updated array in localStorage
-            localStorage.setItem("requests", requestsJSON);
+                if (response.ok) {
+                    const responseData = await response.json();
+                    // Request successfully submitted to the server
+                    alert("Request successfully submitted!");
+                } else {
+                    console.error(`Failed to submit request to the server. Status: ${response.status}, Response: ${await response.text()}`);
+                }
+            } catch (error) {
+                console.error('Error sending request to the server:', error);
+            }
 
             // Reset the form
             requestForm.reset();
@@ -46,9 +55,6 @@ function createRequest() {
             // Hide the form
             requestForm.style.display = "none";
             createRequestBtn.style.display = "block";
-
-            alert("Request successfully submitted!");
-
         });
 
         // Set a flag to indicate that the event listener is attached
