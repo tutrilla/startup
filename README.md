@@ -72,6 +72,20 @@ For this devlierable, I added the javascript to the application
 
 - Javascript support for future WebSocket: Amount of requests will be displayed on dashboard
 
+## Startup Service Deliverable
+
+For this deliverable, I integrated Node.js and Express into the application
+
+- Create an HTTP service using Node.js and Express: I believe so?
+
+- Frontend served using express static middleware: Yes, that is seen in the index.js
+
+- Frontend calls third party service endpoints: Created a new tab called 'Inspiration' and that has a third party service call
+
+- Your backend provides service endpoints: Yes, for getting and receiving language requests
+
+- Your frontend calls your service endpoints: Yes, for getting and receiving language requests
+
 ## Midterm Study Guide
 
 1. In the following code, what does the link element do?
