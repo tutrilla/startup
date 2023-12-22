@@ -86,7 +86,7 @@ For this deliverable, I integrated Node.js and Express into the application
 
 - Your frontend calls your service endpoints: Yes, for getting and receiving language requests
 
-## Startup DB
+## Startup DB Deliverable
 
 For this deliverable, I integrated MongoDB into the application
 
@@ -94,7 +94,19 @@ For this deliverable, I integrated MongoDB into the application
 
 - Eliminated local storage and added on the database for getting and storing language requests
 
-- It successfully stores the data into MongoDB 
+- It successfully stores the data into MongoDB
+
+## Startup Login Deliverable
+
+For this deliverable, I added the login functionality
+
+- You can create a new user from the home page (will remove later as management systems have credentials provided from an authenticated user)
+
+- Supports existing user authentication
+
+- Stores user credentials in MongoDB in a secure fashion
+
+- Restricts functionality based on authentication
 
 ## Midterm Study Guide
 
