@@ -6,8 +6,8 @@ const DB = require('./database.js');
 
 const authCookieName = 'token';
 
-// The service port. In production the front-end code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 4000;
+// The service port may be set on the command line
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
@@ -15,7 +15,7 @@ app.use(express.json());
 // Use the cookie parser middleware for tracking authentication tokens
 app.use(cookieParser());
 
-// Serve up the front-end static content hosting
+// Serve up the applications static content
 app.use(express.static('public'));
 
 // Trust headers that are forwarded from the proxy so we can determine IP addresses
@@ -27,10 +27,10 @@ app.use(`/api`, apiRouter);
 
 // CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
-  if (await DB.getUser(req.body.username)) {
-    res.status(409).send({ msg: 'Existing user, try another username' });
+  if (await DB.getUser(req.body.email)) {
+    res.status(409).send({ msg: 'Existing user' });
   } else {
-    const user = await DB.createUser(req.body.username, req.body.password);
+    const user = await DB.createUser(req.body.email, req.body.password);
 
     // Set the cookie
     setAuthCookie(res, user.token);
@@ -43,7 +43,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 // GetAuth token for the provided credentials
 apiRouter.post('/auth/login', async (req, res) => {
-  const user = await DB.getUser(req.body.username);
+  const user = await DB.getUser(req.body.email);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
       setAuthCookie(res, user.token);
@@ -61,19 +61,14 @@ apiRouter.delete('/auth/logout', (_req, res) => {
 });
 
 // GetUser returns information about a user
-apiRouter.get('/user/:username', async (req, res) => {
-  const user = await DB.getUser(req.params.username);
+apiRouter.get('/user/:email', async (req, res) => {
+  const user = await DB.getUser(req.params.email);
   if (user) {
     const token = req?.cookies.token;
-    res.send({ username: user.username, authenticated: token === user.token });
+    res.send({ email: user.email, authenticated: token === user.token });
     return;
   }
   res.status(404).send({ msg: 'Unknown' });
-});
-
-// Return the application's default page if the path is unknown
-app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
 });
 
 // secureApiRouter verifies credentials for endpoints
@@ -90,34 +85,28 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
-// Number of requests
-secureApiRouter.get('/requests', async (req, res) => {
-  try {
-    let requestsData = await DB.getLangRequests();
-    console.log('Sending data:', requestsData);
-    res.json(requestsData);
-  } catch (error) {
-    console.error('Error processing language requests:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
+// GetScores
+secureApiRouter.get('/scores', async (req, res) => {
+  const scores = await DB.getHighScores();
+  res.send(scores);
 });
 
-// API endpoint to create a request
-secureApiRouter.post('/requests', async (req, res) => {
-  const newRequest = req.body;
-
-  if (!newRequest) {
-    return res.status(400).json({ error: 'Invalid request data'});
-  }
-  console.log('Recieving data:', newRequest);
-
-  DB.addLanguageRequest(newRequest);
-  res.status(201).json(newRequest);
+// SubmitScore
+secureApiRouter.post('/score', async (req, res) => {
+  const score = { ...req.body, ip: req.ip };
+  await DB.addScore(score);
+  const scores = await DB.getHighScores();
+  res.send(scores);
 });
 
 // Default error handler
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });
+});
+
+// Return the application's default page if the path is unknown
+app.use((_req, res) => {
+  res.sendFile('index.html', { root: 'public' });
 });
 
 // setAuthCookie in the HTTP response
