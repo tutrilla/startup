@@ -302,6 +302,14 @@ For this deliverable, I added the login functionality
 
 5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
 
+```
+app.use('/foo', (req, res, next) => {
+  console.log('Middleware executed');
+  next();
+});
+```
+- Middleware executed
+
 
 6. Given the following Express service code: What does the following JavaScript fetch return?
 ```
@@ -327,6 +335,16 @@ app.get('/api/data', (req, res) => {
 
 11. What is JSX and how are the curly braces rendered?
 - JSX is a syntax extension for JavaScript used with React. Curly braces in JSX are used for embedding JavaScript expressions or variables into the markup. They are evaluated and rendered as part of the resulting UI.
+- Here is an example
+```
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+const user = "John";
+const element = <Greeting name={user} />;
+ReactDOM.render(element, document.getElementById('root'));
+```
 
 12. Assuming a HTML document with a `<div id="root"></div>` element, what content will the following React component generate?
 ```
@@ -381,10 +399,59 @@ function Example() {
 - It is a React component that renders a paragraph displaying the current count and a button. Clicking the button increments the count.
 
 15. What are React Hooks used for?
-- React Hooks are functions that enable functional components to use state and lifecycle features that were previously only available in class components.
+- React Hooks are functions that enable functional components to use state and lifecycle features that were previously only available in class components. They provide a way to reuse stateful logic across components.
+- Here is an example:
+```
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+ReactDOM.render(<Counter />, document.getElementById('root'));
+```
 
 16. What is the useEffect hook used for?
 - The useEffect hook in React is used for performing side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM.
+- Here is an example
+
+```
+import React, { useState, useEffect } from 'react';
+
+function DataFetcher() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Fetch data from an API
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => setData(data));
+
+    // Cleanup function (optional)
+    return () => {
+      console.log('Component unmounted or dependencies changed.');
+    };
+  }, []); // Empty dependency array means useEffect runs once on mount
+
+  return (
+    <div>
+      {data ? <p>Data: {data}</p> : <p>Loading...</p>}
+    </div>
+  );
+}
+
+ReactDOM.render(<DataFetcher />, document.getElementById('root'));
+
+```
 
 17. What does this code do?
 ```
