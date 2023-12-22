@@ -108,6 +108,18 @@ For this deliverable, I added the login functionality
 
 - Restricts functionality based on authentication
 
+## Startup WebSocket Deliverable
+
+For this deliverable, I added the WebSocket functionality
+
+- The Backend chat page listens for WebSocket connections
+
+- The frontend establishes the WebSocket connections
+
+- Messages are sent over WebSocket connections
+
+- The messages for chat are displayed in the chat tab
+
 ## Midterm Study Guide
 
 1. In the following code, what does the link element do?
