@@ -328,7 +328,37 @@ app.get('/api/data', (req, res) => {
 - User passwords should be securely hashed using a strong, adaptive hashing algorithm (such as bcrypt) with a unique salt for each user.
 
 9. Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
-- 
+```
+const http = require('http');
+const express = require('express');
+const socketIo = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
+io.on('connection', (socket) => {
+  console.log('A user connected');
+
+  // Handle incoming messages
+  socket.on('chat message', (message) => {
+    console.log(`Message from client: ${message}`);
+  });
+
+  // Handle disconnection
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
+```
+- The server logs "A user connected" when a new WebSocket connection is established.
+- It listens for messages with the event name 'chat message' and logs them.
+- When a user disconnects, the server logs "User disconnected."
 
 10. What is the WebSocket protocol used for?
 - WebSocket is a communication protocol that provides full-duplex communication channels over a single, long-lived connection. It is commonly used for real-time applications.
