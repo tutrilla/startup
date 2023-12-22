@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -11,7 +12,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Simulate data storage
-let requestsData = [];
+// let requestsData = [];
 
 // Router for service endpoints
 var apiRouter = express.Router();
@@ -23,13 +24,19 @@ app.use((_req, res) => {
 });
 
 // Number of requests
-apiRouter.get('/requests', (req, res) => {
-  console.log('Sending data:', requestsData);
-  res.json(requestsData);
+apiRouter.get('/requests', async (req, res) => {
+  try {
+    let requestsData = await DB.getLangRequests();
+    console.log('Sending data:', requestsData);
+    res.json(requestsData);
+  } catch (error) {
+    console.error('Error processing language requests:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 // API endpoint to create a request
-apiRouter.post('/requests', (req, res) => {
+apiRouter.post('/requests', async (req, res) => {
   const newRequest = req.body;
 
   if (!newRequest) {
@@ -37,7 +44,7 @@ apiRouter.post('/requests', (req, res) => {
   }
   console.log('Recieving data:', newRequest);
 
-  requestsData.push(newRequest);
+  DB.addLanguageRequest(newRequest);
   res.status(201).json(newRequest);
 });
 

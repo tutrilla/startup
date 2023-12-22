@@ -86,6 +86,16 @@ For this deliverable, I integrated Node.js and Express into the application
 
 - Your frontend calls your service endpoints: Yes, for getting and receiving language requests
 
+## Startup DB
+
+For this deliverable, I integrated MongoDB into the application
+
+- Created the MongoDB Atlas database
+
+- Eliminated local storage and added on the database for getting and storing language requests
+
+- It successfully stores the data into MongoDB 
+
 ## Midterm Study Guide
 
 1. In the following code, what does the link element do?
