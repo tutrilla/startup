@@ -284,3 +284,138 @@ For this deliverable, I added the login functionality
 - Promise can be three states: Pending, Fulfilled, and Rejected
 - Performs asynchronous operation
 
+## Final Study Guide
+
+1. What ports are used for HTTP, HTTPS, SSH?
+- HTTP: 80, HTTPS: 443, SSH: 22
+
+2. What do HTTP status codes in the 300, 400, 500 range indicate?
+- 300 range: Redirection, 400 range: Client errors, 500 range: Server errors
+3. What does the HTTP header content-type allows you to do?
+- It specifies the media type of the resource and allows the server and the client to understand how to properly parse the content.
+
+4. What do the following attributes of a cookie do?
+- Domain: Specifies the domain for which the cookie is valid.
+- Path: Specifies the URL path for which the cookie is valid.
+- SameSite: Controls whether the cookie is sent with cross-site requests.
+- HTTPOnly: Restricts access to the cookie to HTTP requests, preventing access from JavaScript.
+
+5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+
+
+6. Given the following Express service code: What does the following JavaScript fetch return?
+```
+app.get('/api/data', (req, res) => {
+  res.json({ data: 'Hello, world!' });
+});
+```
+- The fetch would return a JSON object: { data: 'Hello, world!' }.
+
+7. Given the following MongoDB query:
+- { cost: { $gt: 10 }, name: /fran.*/}
+- What does it do?
+- It retrieves documents where the "cost" is greater than 10 and the "name" field matches the regular expression /fran.*/.
+
+8. How should you store user passwords in a database?
+- User passwords should be securely hashed using a strong, adaptive hashing algorithm (such as bcrypt) with a unique salt for each user.
+
+9. Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
+- 
+
+10. What is the WebSocket protocol used for?
+- WebSocket is a communication protocol that provides full-duplex communication channels over a single, long-lived connection. It is commonly used for real-time applications.
+
+11. What is JSX and how are the curly braces rendered?
+- JSX is a syntax extension for JavaScript used with React. Curly braces in JSX are used for embedding JavaScript expressions or variables into the markup. They are evaluated and rendered as part of the resulting UI.
+
+12. Assuming a HTML document with a `<div id="root"></div>` element, what content will the following React component generate?
+```
+function Welcome(props) {
+return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+return (
+<div>
+<Welcome name="Sara" />
+<Welcome name="Cahal" />
+<Welcome name="Edite" />
+</div>
+);
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+```
+- The content will be a div containing three h1 elements with the names "Sara," "Cahal," and "Edite."
+
+13. Assuming a HTML document with a '<div id="root"></div>' element, what content will the following React component generate?
+```
+    function Numbers() { 
+      const numbers = [1, 2, 3, 4, 5];
+      const listItems = numbers.map((number) =>
+        <li>{number}</li>
+      );
+      return(<ul>{listItems}</ul>)
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(<Numbers/>);
+```
+- The content will be an unordered list (ul) containing five list items (li) with the numbers 1, 2, 3, 4, and 5.
+
+14. What does the following React component do?
+```
+function Example() {
+  // Declare a new state variable, which we'll call "count"  
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+- It is a React component that renders a paragraph displaying the current count and a button. Clicking the button increments the count.
+
+15. What are React Hooks used for?
+- React Hooks are functions that enable functional components to use state and lifecycle features that were previously only available in class components.
+
+16. What is the useEffect hook used for?
+- The useEffect hook in React is used for performing side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM.
+
+17. What does this code do?
+```
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+- It sets up routing using React Router. The application has routes for the home page ("/"), blogs ("/blogs"), contact ("/contact"), and a catch-all route for any other path, rendering corresponding components.
+
+18. What role does npm play in web development?
+- npm (Node Package Manager) is a package manager for JavaScript and the default package manager for Node.js. It is used to install, manage, and distribute packages or libraries (dependencies) for web development projects.
+
+19. What does package.json do in a npm project?
+- The package.json file in an npm project contains metadata about the project, as well as information about its dependencies, scripts, and other configuration settings. It is a central file that npm uses to manage the project.
+
+20. What does the fetch function do?
+- The fetch function is a modern JavaScript API used to make network requests (e.g., HTTP requests). It returns a Promise that resolves to the Response to that request, whether it is successful or not.
+
+21. What does node.js do?
+- Node.js is a JavaScript runtime environment that allows the execution of JavaScript code on the server side. It provides a platform for building scalable network applications and is commonly used for web development.
+
+22. What does Vite do?
+- Vite is a build tool for web development that aims to provide a faster and more efficient development experience. It is particularly well-suited for modern JavaScript frameworks like Vue.js and React. Vite focuses on fast development builds and server-side rendering.
